@@ -3,13 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibration Weight Calculator (In Progress)</title>
     <link rel="stylesheet" href="style.css">
+    <title>Vibration Weight Calculator</title>
 </head>
 <body>
-    <h1>Vibration Weight Calculator (Under Construction)</h1>
-    <p>This site is currently under development. Please check back later!</p>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-    <script src="script.js"></script>
+    <header >
+        <div class = "main_heading">
+            <h1>Vibration Weight Calculator</h1>
+        </div>
+    </header>
+    <div class = "content_box">
+        <div class = "instructions">
+            <p>Find the best combinations of two weights from your Excel file that sum up to your
+                desired target weight.<br>
+                Upload your Excel file, enter the required weight, and click "Calculate".</p>
+        </div>
+        <div>
+            <form id="weight_form">
+                <label for="file-upload">Upload Excel File:</label>
+                <input type="file" id="file-upload" accept=".xlsx, .xls">
+
+                <label for="required-weight">Required Weight (grams):</label>
+                <input type="number" id="required-weight" step="0.1">
+                <div class="button-container">
+                    <button type="submit">Calculate</button>
+                    <button type="button" id="show-weights-btn">Show Current Weights</button>
+                    <button type="button" id="excel-format-btn">Excel Format</button>
+                </div>
+            </form>
+    </div>
+
+    <div id="weights-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">×</span>
+            <h2>Current Weights</h2>
+            <div id="weights-list"></div>
+        </div>
+    </div>
+
+    <div id="results-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">×</span>
+            <h2>Results</h2>
+            <div id="results-list"></div>
+            <button id="download-results-btn">Download Results</button>
+        </div>
+    </div>
+
+    <div id="excel-format-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">×</span>
+            <h2>Excel File Format</h2>
+            <p>Your Excel file should have two columns:</p>
+            <ol>
+                <li><strong>Index:</strong> A unique identifier for each weight.</li>
+                <li><strong>Weight (grams):</strong> The weight value in grams.</li>
+            </ol>
+            <p>Example:</p>
+            <table class="excel-example">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Weight (grams)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>10.5</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>12.3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>8.7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by Lt Col Hemant Saini & Shaurya Saini<br>40 (I) R & O Flight</p>
+    </footer>
 </body>
 </html>
