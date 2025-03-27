@@ -107,6 +107,7 @@ function findClosestWeightPairs(weights, requiredWeight) {
         }
 
         if (filteredPairs.length >= 10) break;
+        if (pairs.length === 0) break;
     }
 
     return filteredPairs;
