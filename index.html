@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Vibration Weight Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header >
-        <div class = "main_heading">
+
+    <header>
+        <div class="main_heading">
             <h1>Vibration Weight Calculator</h1>
         </div>
     </header>
-    <div class = "content_box">
-        <div class = "instructions">
-            <p>Find the best combinations of two weights from your Excel file that sum up to your
-                desired target weight.<br>
-                Upload your Excel file, enter the required weight, and click "Calculate".</p>
-        </div>
-        <div>
-            <form id="weight_form">
-                <label for="file-upload">Upload Excel File:</label>
-                <input type="file" id="file-upload" accept=".xlsx, .xls">
 
-                <label for="required-weight">Required Weight (grams):</label>
-                <input type="number" id="required-weight" step="0.1">
-                <div class="button-container">
-                    <button type="submit">Calculate</button>
-                    <button type="button" id="show-weights-btn">Show Current Weights</button>
-                    <button type="button" id="excel-format-btn">Excel Format</button>
-                </div>
-            </form>
+    <div class="content_box">
+        <p class="instructions">
+            Find the best combinations of two weights from your Excel file that sum up to your
+            desired target weight.<br>
+            Upload your Excel file, enter the required weight, and click "Calculate".
+        </p>
+
+        <form id="weight-form">
+            <label for="file-upload">Upload Excel File:</label>
+            <input type="file" id="file-upload" accept=".xlsx, .xls">
+
+            <label for="required-weight">Required Weight (grams):</label>
+            <input type="number" id="required-weight" step="0.1">
+
+            <div class="button-container">
+                <button type="submit">Calculate</button>
+                <button type="button" id="show-weights-btn">Show Current Weights</button>
+                <button type="button" id="excel-format-btn">Excel Format</button>
+            </div>
+        </form>
+
+        <div id="loading" class="loading">Loading...</div>
+
+        <div id="results"></div>
     </div>
 
     <div id="weights-popup" class="popup">
@@ -84,9 +93,15 @@
             </table>
         </div>
     </div>
+    
+    
 
-    <footer>
+    <footer class="footer">
         <p>Created by Lt Col Hemant Saini & Shaurya Saini<br>40 (I) R & O Flight</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

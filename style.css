@@ -26,7 +26,7 @@ header{
     color: #d1c5f1;
     margin-bottom: 30px;
     line-height: 1.6;
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: center;
     font-style: italic;
 }
@@ -94,8 +94,8 @@ button{
 
 
 footer{
-    margin-top: 40px;
-    padding: 15px 0;
+    margin-top: 10px;
+    padding: 10px 0;
     text-align: center;
     color: #b8a8d1;
     font-size: large;
@@ -188,4 +188,25 @@ footer{
     margin-bottom: 10px;
     font-size: 1em;
     color: #e0dcfc;
+}
+
+
+button:hover {
+    background-color: #a36eff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+#loading {
+    display: none;
+    margin-top: 25px;
+    color: #d1c5f1;
+    font-style: italic;
+    font-size: 1em;
+    text-align: center;
 }
